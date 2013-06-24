@@ -1,0 +1,91 @@
+<!Doctype html>
+<html>
+  <head>
+    <title>Fruit Factory</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="JavaScript/nodeModule.js"></script>
+	<script src="JavaScript/listMain.js"></script>
+	<link  rel="stylesheet" href="CSS/main.css" type="text/css" />
+  </head>
+  <body>
+    <div id="main">
+	  <div id="mainHead">
+	    <div id="textContainer">  
+	      <span class="textLg">FRUIT<strong>FACTORY</strong> 1.0</span><br/>
+		  FRUIT TRACKING APPLICATION v1.0
+		</div>
+	    <div id="headIcons">
+		</div>
+	    <div id="iconContainer">
+	      <div>
+	        <img id="saveIcon" src="Graphics/Nav_Save.png" onclick="showFilePaths()">
+			<a id="hiddenA"></a>
+		    <img id="newIcon" src="Graphics/Nav_New.png" onclick="newList()">
+		    <img id="openIcon" src="Graphics/Nav_Open.png" onclick="showFilePaths()">
+	      </div>
+		</div>
+	  </div>
+	  <div id="underline">
+	  </div>
+	  <div id="outterBody">
+	    <div id="innerBody">
+		<div><div class='text'><strong>Height</strong><br/> AT bottom</div></div>
+		<!--PlaceHolder Begin-->
+		  <div class="fruitEdge" onclick="selectList(event)">
+		    <span class="textLg index"><strong>01</strong></span>
+			<div class="fruitInner">
+			  <span class="bottomHeight textLg">00</span>
+			  <span class="fruit" class="auto">
+			    <span class="name"><strong>Apple</strong></span><br/>
+			    <div class="catagory">Red Delicious</div><span class='fruitHeight'>6</span> in.
+			  </span>
+			</div>
+		  </div>
+		  <!--here-->
+		  <div class='fruitEdge selected' onclick="unselectList(event)">
+		    <span class="textLg index"><strong>02</strong></span>
+			<div class="fruitInner">
+			  <span class="bottomHeight textLg">06</span>
+			  <span class="fruitElements">
+			    <select class="fruits" onchange="changeSub(event)" onclick="stopProp(event)">
+			      <option value="Rasberry">Rasberry</option>
+				  <option value="Plum">Plum</option>
+				  <option value="Orange">Orange</option>
+				  <option value="Apple">Apple</option>
+				  <option value="Peach" selected>Peach</option>
+			    </select><br/>
+			    <select class="subCats" onclick="stopProp(event)">
+			      <option value="Georgia" selected>Georgia</option>
+				  <option value="Nectarine">Nectarine</option>
+			    </select>
+			    Height <input type="text" value="5" onkeypress="validateHeight(event)" class="fruitHeight" onclick="stopProp(event)"> in
+			  </span>
+			  <span class="buttons">
+			     <img src="Graphics/RoundCancel.png" onclick="removeItem(event)"><img src="Graphics/ArrowUp_neutral.png" onmouseover="imgOver(event)" onmouseout="imgOut(event)" onclick="moveUp(event)"><br/>
+				 <img src="Graphics/ArrowDwn_neutral.png" class="rightImg" onmouseover="imgOver(event)" onmouseout="imgOut(event)" onclick="moveDown(event)">
+			  </span>
+			</div>
+		  </div>
+		<!--PlaceHolder End-->
+		</div>
+		<div id='lowerBody'>
+          <span class="images">		
+	        <img id="addNewButton" src="Graphics/AddNewFruit_neutral.png" onmouseover="imgOver(event)" onmouseout="imgOut(event)" onclick="newItem()">
+		    <img id="duplicateButton" src="Graphics/DuplicateFruit_neutral.png" onmouseover="imgOver(event)" onmouseout="imgOut(event)" onclick="duplicateItem()">
+		  </span>
+		  <strong>Total Height <span id="total">6</span>in</strong>		  
+		</div>
+	  </div>
+	  <div id="footer"><strong>HALLIBURTON</strong></div>
+	</div>
+	<div id="files">
+	  <div>
+	  <strong>Open File at Relative File Path:   <a href="" onclick="$('#files').hide()">X</a></strong><br/>
+	  <input type="text" id="openFile"><br/>
+	  <strong>Save File Name:</strong><br/>
+	  <input type="text" id="saveFile"><br/>
+	  <input type="button" onclick="downloadFile()" value="Save File"><input type="button" onclick="openFile()" value="Open File">
+	  </div>
+	</div>
+  </body>
+</html>

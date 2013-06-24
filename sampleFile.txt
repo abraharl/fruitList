@@ -1,0 +1,4 @@
+Apple,Red Delicious,6
+Plum,Cherry,5
+Orange,Blood,11
+Peach,Georgia,8
